@@ -41,9 +41,6 @@ java Main
 3. **Group Meeting**: Thêm cuộc hẹn tên "Họp nhóm OOAD", 120 phút (18:00-20:00)
 4. **Validation**: Thêm cuộc hẹn tên trống hoặc giờ kết thúc trước giờ bắt đầu
 
-## Sơ đồ
-- `ClassDiagram_AddCalendarAppointment.xml` - Mở bằng [draw.io](https://app.diagrams.net)
-- `SequenceDiagram_AddCalendarAppointment.xml` - Mở bằng [draw.io](https://app.diagrams.net)
 
 ## Thành viên nhóm
 - Nguyễn Tấn Quốc
