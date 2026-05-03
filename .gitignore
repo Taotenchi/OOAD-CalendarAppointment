@@ -1,0 +1,12 @@
+*.class
+*.jar
+*.war
+*.ear
+*.log
+.idea/
+*.iml
+.vscode/
+.DS_Store
+out/
+bin/
+build/

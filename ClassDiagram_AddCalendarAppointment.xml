@@ -1,0 +1,249 @@
+<mxfile host="app.diagrams.net" modified="2026-04-30T10:42:00.000Z" agent="draw.io" version="24.0.0" type="device">
+  <diagram id="class-diagram" name="Class Diagram - Add Calendar Appointment">
+    <mxGraphModel dx="1800" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- CalendarUI class -->
+        <mxCell id="10" value="&lt;&lt;boundary&gt;&gt;&#xa;CalendarUI" style="swimlane;fontStyle=1;align=center;startSize=40;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="320" height="290" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="- activeDate: Date&#xa;- activeTime: Time" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="10">
+          <mxGeometry y="40" width="320" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;" vertex="1" parent="10">
+          <mxGeometry y="90" width="320" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="+ displayCalendar(): void&#xa;+ showAppointments(date: Date): void&#xa;+ openAddAppointmentDialog(): void&#xa;+ showConflictWarning(apt: Appointment): void&#xa;+ showGroupMeetingPrompt(m: GroupMeeting): void&#xa;+ refreshView(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="10">
+          <mxGeometry y="98" width="320" height="192" as="geometry"/>
+        </mxCell>
+
+        <!-- AddAppointmentDialog class -->
+        <mxCell id="20" value="&lt;&lt;boundary&gt;&gt;&#xa;AddAppointmentDialog" style="swimlane;fontStyle=1;align=center;startSize=40;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="20" width="320" height="290" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="- nameField: String&#xa;- locationField: String&#xa;- startTimeField: DateTime&#xa;- endTimeField: DateTime&#xa;- reminderOption: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="20">
+          <mxGeometry y="40" width="320" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;" vertex="1" parent="20">
+          <mxGeometry y="130" width="320" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="23" value="+ display(date: Date, time: Time): void&#xa;+ validateInput(): boolean&#xa;+ getAppointmentData(): Appointment&#xa;+ showError(message: String): void&#xa;+ close(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="20">
+          <mxGeometry y="138" width="320" height="152" as="geometry"/>
+        </mxCell>
+
+        <!-- AppointmentController class -->
+        <mxCell id="30" value="&lt;&lt;control&gt;&gt;&#xa;AppointmentController" style="swimlane;fontStyle=1;align=center;startSize=40;collapsible=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="220" y="390" width="400" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="31" value="- calendar: Calendar&#xa;- currentUser: User" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="30">
+          <mxGeometry y="40" width="400" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="32" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;" vertex="1" parent="30">
+          <mxGeometry y="90" width="400" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="33" value="+ addAppointment(name, location, start, end): boolean&#xa;+ validateAppointment(name, start, end): boolean&#xa;+ checkConflict(apt: Appointment): Appointment&#xa;+ handleConflict(existing, newApt): void&#xa;+ checkGroupMeeting(apt: Appointment): GroupMeeting&#xa;+ joinGroupMeeting(user: User, m: GroupMeeting): void&#xa;+ addReminder(apt: Appointment, time: DateTime): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="30">
+          <mxGeometry y="98" width="400" height="202" as="geometry"/>
+        </mxCell>
+
+        <!-- User class -->
+        <mxCell id="40" value="User" style="swimlane;fontStyle=1;align=center;startSize=26;collapsible=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="20" y="780" width="280" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="41" value="- userId: int&#xa;- name: String&#xa;- email: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="40">
+          <mxGeometry y="26" width="280" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="42" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;" vertex="1" parent="40">
+          <mxGeometry y="90" width="280" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="43" value="+ getAppointments(): Appointment[]&#xa;+ addAppointment(apt: Appointment): void&#xa;+ removeAppointment(apt: Appointment): void&#xa;+ getReminders(): Reminder[]&#xa;+ addReminder(r: Reminder): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="40">
+          <mxGeometry y="98" width="280" height="142" as="geometry"/>
+        </mxCell>
+
+        <!-- Calendar class -->
+        <mxCell id="50" value="Calendar" style="swimlane;fontStyle=1;align=center;startSize=26;collapsible=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="360" y="780" width="340" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="51" value="- owner: User" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="50">
+          <mxGeometry y="26" width="340" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="52" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;" vertex="1" parent="50">
+          <mxGeometry y="56" width="340" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="53" value="+ addAppointment(apt: Appointment): boolean&#xa;+ removeAppointment(apt: Appointment): boolean&#xa;+ getAppointmentsForDate(date: Date): Appointment[]&#xa;+ checkConflict(apt: Appointment): Appointment&#xa;+ findMatchingGroupMeeting(name, duration): GroupMeeting" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="50">
+          <mxGeometry y="64" width="340" height="176" as="geometry"/>
+        </mxCell>
+
+        <!-- Appointment class -->
+        <mxCell id="60" value="Appointment" style="swimlane;fontStyle=1;align=center;startSize=26;collapsible=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="760" y="780" width="290" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="61" value="- appointmentId: int&#xa;- name: String&#xa;- location: String&#xa;- startTime: DateTime&#xa;- endTime: DateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="60">
+          <mxGeometry y="26" width="290" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="62" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;" vertex="1" parent="60">
+          <mxGeometry y="116" width="290" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="63" value="+ getName(): String&#xa;+ getLocation(): String&#xa;+ getStartTime(): DateTime&#xa;+ getEndTime(): DateTime&#xa;+ getDuration(): int&#xa;+ isValid(): boolean&#xa;+ conflictsWith(other: Appointment): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="60">
+          <mxGeometry y="124" width="290" height="156" as="geometry"/>
+        </mxCell>
+
+        <!-- GroupMeeting class (extends Appointment) -->
+        <mxCell id="70" value="GroupMeeting" style="swimlane;fontStyle=1;align=center;startSize=26;collapsible=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="760" y="1140" width="310" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="71" value="- meetingId: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="70">
+          <mxGeometry y="26" width="310" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="72" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;" vertex="1" parent="70">
+          <mxGeometry y="56" width="310" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="73" value="+ addParticipant(user: User): void&#xa;+ removeParticipant(user: User): void&#xa;+ getParticipants(): User[]&#xa;+ matchesNameAndDuration(name, duration): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="70">
+          <mxGeometry y="64" width="310" height="136" as="geometry"/>
+        </mxCell>
+
+        <!-- Reminder class -->
+        <mxCell id="80" value="Reminder" style="swimlane;fontStyle=1;align=center;startSize=26;collapsible=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="780" width="260" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="81" value="- reminderId: int&#xa;- reminderTime: DateTime&#xa;- message: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="80">
+          <mxGeometry y="26" width="260" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="82" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;" vertex="1" parent="80">
+          <mxGeometry y="90" width="260" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="83" value="+ getAppointment(): Appointment&#xa;+ getReminderTime(): DateTime&#xa;+ trigger(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="80">
+          <mxGeometry y="98" width="260" height="112" as="geometry"/>
+        </mxCell>
+
+        <!-- RELATIONSHIPS -->
+
+        <!-- CalendarUI to AddAppointmentDialog: dependency create -->
+        <mxCell id="101" value="&lt;&lt;create&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;" edge="1" parent="1" source="11" target="21">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- CalendarUI to AppointmentController: dependency use -->
+        <mxCell id="102" value="&lt;&lt;use&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;" edge="1" parent="1" source="13" target="33">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- AddAppointmentDialog to AppointmentController: dependency use -->
+        <mxCell id="103" value="&lt;&lt;use&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;" edge="1" parent="1" source="23" target="33">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- AppointmentController to Calendar: association -->
+        <mxCell id="104" value="" style="endArrow=open;endSize=12;html=1;" edge="1" parent="1" source="31" target="51">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- AppointmentController to User: association -->
+        <mxCell id="105" value="" style="endArrow=open;endSize=12;html=1;" edge="1" parent="1" source="31" target="41">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- User to Appointment: 1 to many -->
+        <mxCell id="106" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="43" target="61">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="106a" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="106">
+          <mxGeometry x="-0.85" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="106b" value="*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="106">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- User to Reminder: 1 to many -->
+        <mxCell id="107" value="" style="endArrow=none;html=1;curved=1;" edge="1" parent="1" source="41" target="81">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="830"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="107a" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="107">
+          <mxGeometry x="-0.85" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="107b" value="*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="107">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Calendar to Appointment: aggregation 1 to many -->
+        <mxCell id="108" value="" style="endArrow=none;startArrow=diamondThin;startFill=0;startSize=14;html=1;" edge="1" parent="1" source="53" target="63">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="108a" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="108">
+          <mxGeometry x="-0.85" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="108b" value="*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="108">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- GroupMeeting extends Appointment: generalization -->
+        <mxCell id="110" value="" style="endArrow=block;endFill=0;endSize=16;html=1;" edge="1" parent="1" source="70" target="60">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GroupMeeting to User: many to many (participants) -->
+        <mxCell id="111" value="participants" style="endArrow=none;html=1;" edge="1" parent="1" source="73" target="43">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="1200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="111a" value="*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="111">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="111b" value="*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="111">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Reminder to Appointment: many to 1 -->
+        <mxCell id="112" value="" style="endArrow=none;html=1;" edge="1" parent="1" source="81" target="63">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="112a" value="*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="112">
+          <mxGeometry x="-0.85" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="112b" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];" vertex="1" connectable="0" parent="112">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Layer labels -->
+        <mxCell id="200" value="Boundary Layer" style="text;html=1;fontSize=14;fontStyle=3;fillColor=none;strokeColor=none;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-130" y="140" width="130" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="201" value="Control Layer" style="text;html=1;fontSize=14;fontStyle=3;fillColor=none;strokeColor=none;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-130" y="510" width="130" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="202" value="Entity Layer" style="text;html=1;fontSize=14;fontStyle=3;fillColor=none;strokeColor=none;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="-130" y="880" width="130" height="30" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
