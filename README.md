@@ -46,6 +46,6 @@ java Main
 - `SequenceDiagram_AddCalendarAppointment.xml` - Mở bằng [draw.io](https://app.diagrams.net)
 
 ## Thành viên nhóm
-- Thành viên 1
-- Thành viên 2
-- Thành viên 3
+- Nguyễn Tấn Quốc
+- Nguyễn Nhật Anh Hào
+- Phạm Ngọc Hiệp
